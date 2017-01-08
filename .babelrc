@@ -1,0 +1,41 @@
+{
+  "presets": ["react", ["es2015", { "loose" : true }], "stage-0"],
+  "plugins": [
+    "lodash",
+    "transform-decorators-legacy",
+    "syntax-flow",
+    "transform-flow-strip-types",
+
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "node_modules": "./node_modules",
+      },
+    }],
+
+    ["transform-imports", {
+      "react-router": {
+        "transform": "react-router/lib/${member}",
+        "preventFullImport": true
+      }
+    }]
+  ],
+
+  "env": {
+    "production": {
+      "plugins": [
+        "transform-runtime",
+        "transform-react-inline-elements",
+        "transform-react-remove-prop-types",
+        "transform-react-constant-elements",
+        "transform-react-pure-class-to-function"
+      ]
+    },
+
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel",
+      ]
+    }
+  }
+}
