@@ -1,17 +1,11 @@
 body{
-  font-family: "XXX", Arial, sans-serif;
-  font-size: 1 px;
-  line-height: 1 px;
-  min-width: 1 px;
+  font-family: $font-family;
+  min-width: 320px;
+  font-size: 14px;
+  line-height: 18px;
   margin: 0;
   padding: 0;
   background-color: #fff;
-}
-
-.container{
-  max-width: 1px;
-  margin: 0 auto;
-  padding: 0 1px;
 }
 
 a{
@@ -73,12 +67,12 @@ h6{
 }
 
 input{
-  font-family: "x";
+  font-family: $font-family;
   outline: none;
   padding: 0;
   border: none;
   font-weight: normal;
-  font-size: 1px;
+  font-size: 14px;
 }
 
 textarea{

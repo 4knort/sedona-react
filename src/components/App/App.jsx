@@ -1,7 +1,12 @@
 import React, { PropTypes } from 'react';
+import { Container } from "components";
 
 const App = ({ children }) => (
-  <div className="app">{children}</div>
+  <div className="app">
+    <Container>
+      {children}
+    </Container>
+  </div>
 );
 
 App.propTypes = {
