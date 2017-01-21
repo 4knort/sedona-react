@@ -1,2 +1,3 @@
 export logo from './logo.png'
-export map from './map.jpg'
+export town from './town.jpg'
+export bridge from './bridge.jpg'

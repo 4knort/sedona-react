@@ -1,9 +1,25 @@
 import React from 'react';
-import { IndexPromo } from 'components';
+import { 
+  IndexPromo, 
+  TopIntro, 
+  Town, 
+  Features, 
+  Bridge, 
+  Reasons, 
+  Hotels, 
+  Map,
+} from 'components';
 
 const IndexPage = () => (
   <div className="index-page">
     <IndexPromo />
+    <TopIntro />
+    <Town />
+    <Features />
+    <Bridge />
+    <Reasons />
+    <Hotels />
+    <Map />
   </div>
 );
 

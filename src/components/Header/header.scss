@@ -1,3 +1,142 @@
 .main-header{
   position: relative;
 }
+
+.logo-wrap{
+  text-align:center;
+  position:relative;
+  z-index:20;
+}
+
+@media (min-width: $mobile){
+  .logo-wrap{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+.main-logo{
+  display:inline-block;
+}
+
+
+.main-nav{
+  display:none;
+  
+  &__list{
+    padding:0;
+    margin:0;
+  }
+  &__item{
+    list-style-type:none;
+    font-size:$font-title;
+    font-weight:bold;
+    text-align:center;
+    background-color:$blue;
+    border-bottom:1px solid #678fa8;
+    &--shadow{
+      border-bottom:none;
+      box-shadow:inset 0 -1px 2px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+  &__link{
+    text-decoration:none;
+    color:$white;
+    display:block;
+    padding:19px;
+    transition: all 0.4s ease;
+    &:hover{
+      background-color:darken($blue, 5%);
+    }
+    &:active{
+      background-color:darken($blue, 15%);
+      color:rgba(250, 250, 250, 0.3);
+    }
+  }
+  &-open{
+    display:block;
+  }
+}
+
+@media (min-width: $mobile){
+  .main-nav{
+    display:block;
+    font-size:0;
+    padding-bottom:15px;
+    &__item{
+      display:inline-block;
+      vertical-align:baseline;
+      font-size:14px;
+      background:none;
+      border:none;
+      box-shadow:none;
+      width:20%;
+      padding:0;
+      padding-top:17px;
+      &:nth-child(2){
+        padding-right:20%;
+      }
+    }
+    &__link{
+      color:#000;
+      display:inline;
+      padding:0;
+      &:hover{
+        color:$blue;
+        background-color:transparent;
+      }
+      &:active{
+        color:#b2b2b2;
+        background-color:transparent;
+      }
+      &--active{
+        color:#766357;
+        &:hover{
+          color:darken(#766357, 10%);
+        }
+        &:active{
+          color:lighten(#766357, 35%);
+        }
+      }
+    }
+  }
+}
+
+.main-navigation-button{
+  position:absolute;
+  background-color:transparent;
+  outline:none;
+  border:none;
+  background-image:url(./img/sprite.png);
+  background-position:-434px -5px;
+  width:23px;
+  height:22px;
+  right:21px;
+  top:17px;
+  cursor:pointer;
+  z-index:30;
+}
+.main-navigation-close{
+  position:absolute;
+  background-color:transparent;
+  outline:none;
+  border:none;
+  background-image:url(./img/sprite.png);
+  background-position:-401px -5px;
+  width:23px;
+  height:22px;
+  right:21px;
+  top:17px;
+  cursor:pointer;
+}
+
+@media (min-width: $mobile){
+  .main-navigation-button{
+    display:none;
+  }
+}
+
+
