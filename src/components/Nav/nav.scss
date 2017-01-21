@@ -23,7 +23,6 @@
     display:block;
     padding:19px;
     transition: all 0.4s ease;
-    text-transform: uppercase;
     &:hover{
       background-color:darken($blue, 5%);
     }

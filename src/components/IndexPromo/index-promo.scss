@@ -1,0 +1,65 @@
+.index-promo{
+  background:#ddebf4 url(./img/photo-background@1x.jpg) no-repeat 0 0;
+  background-size:cover;
+  position:relative;
+  overflow:hidden;
+  height:390px;
+  margin-bottom:30px;
+  padding-top:45px;
+  box-sizing:border-box;
+  &__text{
+    fill:#fff;
+    display:block;
+    margin:0 auto;
+    width:350px;
+    &--welcome{
+      fill:$blue;
+      width:145px;
+    }
+    &--gorgeous{
+      margin-bottom:40px;
+      fill:#766357;
+      width:200px;
+    }
+    &--sedona{
+      margin-bottom:38px;
+      width:280px;
+    }
+    &--grand{
+      width:200px;
+    }
+  }
+}
+
+@media (min-width: $mobile){
+  .index-promo{
+    background:#ddebf4 url(./img/photo-background@1x.jpg) no-repeat 0 0;
+    background-size: cover;
+    background-position:center bottom, center;
+    height:510px;
+    margin-bottom:50px;
+    padding-top:76px;
+    &__text{
+      width:auto;
+      &--welcome{
+        fill:$blue;
+        width:190px;
+        margin-bottom:13px;
+      }
+      &--gorgeous{
+        margin-bottom:40px;
+        fill:#766357;
+        width:265px;
+        margin-bottom:50px;
+      }
+      &--sedona{
+        margin-bottom:38px;
+        width:450px;
+        margin-bottom:55px;
+      }
+      &--grand{
+        width:300px;
+      }
+    }
+  }
+}

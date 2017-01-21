@@ -1,11 +1,10 @@
 import React from 'react';
-import { Header } from 'components';
 
 import './container.scss';
 
-const Container = () => (
+const Container = ( {children} ) => (
   <div className="container">
-    <Header />
+    {children}
   </div>
 );
 
