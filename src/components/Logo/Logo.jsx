@@ -1,12 +1,12 @@
 import React from 'react';
-import { LogoImage } from 'components';
+import { Image } from 'components';
 
 import './logo.scss';
 
 const Logo = () => (
   <div className="logo-wrap">
     <a href="" className="main-logo">
-      <LogoImage />
+      <Image image="logo" />
     </a>
   </div>
 )

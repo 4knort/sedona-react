@@ -44,6 +44,19 @@ const loaders = [
     include: path.join(__dirname, 'src'),
     exclude: path.join(__dirname, 'src/ui/Icon'),
   },
+
+  {
+    test: /\.png$/, 
+    loader: "url-loader",
+    query: { mimetype: "image/png" }
+  },
+
+  {
+    test: /\.jpg$/, 
+    loader: "url-loader",
+    query: { mimetype: "image/jpg" }
+  },
+
 ];
 
 // Plugins used in all builds
