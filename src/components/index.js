@@ -14,6 +14,10 @@ export Reasons from './IndexPage/Reasons/Reasons';
 export Hotels from './IndexPage/Hotels/Hotels';
 export Map from './IndexPage/Map/Map';
 
+
+export InnerPromo from './InnerPromo/InnerPromo';
+export FormTitle from './FormTitle/FormTitle';
+
 // svg icons
 export Welcome from './svgIcons/Welcome' 
 export Gorgeous from './svgIcons/Gorgeous' 
