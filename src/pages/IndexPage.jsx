@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+import * as dataActions from 'actions/dataActions';
+
 import { 
   IndexPromo, 
   TopIntro, 
@@ -10,8 +13,13 @@ import {
   Map,
 } from 'components';
 
-const IndexPage = () => (
-  <div className="index-page">
+@connect(state => ({ data: state.data }), dataActions)
+export default class IndexPage extends PureComponent {
+  componentDidMount() {
+    this.props.fetchArticles();
+  }
+  render() {
+    return (<div className="index-page">
     <IndexPromo />
     <TopIntro />
     <Town />
@@ -21,6 +29,6 @@ const IndexPage = () => (
     <Hotels />
     <Map />
   </div>
-);
-
-export default IndexPage;
+  )
+  }
+}
