@@ -7,7 +7,6 @@ const FormTitle = ( { block } ) => {
   let componentInfo = {};
 
   switch(block) {
-
     case 'radio': {
       componentInfo = {
         class: 'form-title--radio',

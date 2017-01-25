@@ -9,16 +9,19 @@ const config = {
   titleLength: 3,
   descriptionLength: 10,
   articleLength: 500,
+  tags: ['Происшествия', 'Законы', 'Интересное', 'Еда', 'Погода'],
 };
 
 dream.customType('article:description', (helper) => helper.chance.sentence({ words: config.descriptionLength }));
 dream.customType('article:article', (helper) => helper.chance.sentence({ words: config.articleLength }));
 dream.customType('article:title', (helper) => helper.chance.sentence({ words: config.titleLength }));
+dream.customType('article:tag', (helper) => helper.oneOf(config.tags));
 
 dream.schema('article', {
   title: 'article:title',
   description: 'article:description',
-  article: 'article:article'
+  article: 'article:article',
+  tag: 'article:tag',
 });
 
 mkdirp('./public', (err) => {

@@ -1,0 +1,37 @@
+[1mdiff --git a/scripts/presets.js b/scripts/presets.js[m
+[1mindex 74b833e..2a27845 100644[m
+[1m--- a/scripts/presets.js[m
+[1m+++ b/scripts/presets.js[m
+[36m@@ -9,16 +9,19 @@[m [mconst config = {[m
+   titleLength: 3,[m
+   descriptionLength: 10,[m
+   articleLength: 500,[m
+[32m+[m[32m  tags: ['Происшествия', 'Законы', 'Интересное', 'Еда', 'Погода'],[m
+ };[m
+ [m
+ dream.customType('article:description', (helper) => helper.chance.sentence({ words: config.descriptionLength }));[m
+ dream.customType('article:article', (helper) => helper.chance.sentence({ words: config.articleLength }));[m
+ dream.customType('article:title', (helper) => helper.chance.sentence({ words: config.titleLength }));[m
+[32m+[m[32mdream.customType('article:tag', (helper) => helper.oneOf(config.tags));[m
+ [m
+ dream.schema('article', {[m
+   title: 'article:title',[m
+   description: 'article:description',[m
+[31m-  article: 'article:article'[m
+[32m+[m[32m  article: 'article:article',[m
+[32m+[m[32m  tag: 'article:tag',[m
+ });[m
+ [m
+ mkdirp('./public', (err) => {[m
+[1mdiff --git a/src/components/FormTitle/FormTitle.jsx b/src/components/FormTitle/FormTitle.jsx[m
+[1mindex e513a86..c28af87 100644[m
+[1m--- a/src/components/FormTitle/FormTitle.jsx[m
+[1m+++ b/src/components/FormTitle/FormTitle.jsx[m
+[36m@@ -7,7 +7,6 @@[m [mconst FormTitle = ( { block } ) => {[m
+   let componentInfo = {};[m
+ [m
+   switch(block) {[m
+[31m-[m
+     case 'radio': {[m
+       componentInfo = {[m
+         class: 'form-title--radio',[m
