@@ -2,15 +2,15 @@ import React from 'react';
 import { 
   InnerPromo, 
   TopIntro, 
-  FormTitle, 
+  BlogPagination
 } from 'components';
 
-const FormPage = () => (
+const BlogPage = () => (
   <div className="index-page">
     <InnerPromo />
-    <TopIntro page="form" />
-    <FormTitle />
+    <TopIntro page="blog" />
+    <BlogPagination />
   </div>
 );
 
-export default FormPage;
+export default BlogPage;

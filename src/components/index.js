@@ -17,6 +17,8 @@ export Map from './IndexPage/Map/Map';
 
 export InnerPromo from './InnerPromo/InnerPromo';
 export FormTitle from './FormTitle/FormTitle';
+export BlogPagination from './BlogPagination/BlogPagination';
+export Article from './Article/Article';
 
 // svg icons
 export Welcome from './svgIcons/Welcome' 

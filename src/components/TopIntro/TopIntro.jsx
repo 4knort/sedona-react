@@ -3,9 +3,9 @@ import React from 'react';
 import './top-intro.scss';
 
 const TopIntro = ( { page }) => {
-  const topTextClass = (page === "index") ? "top-intro__text" : "top-intro__text top-intro__text--form";
   const topIntroClass = (page === "index") ?  "top-intro " : "top-intro top-intro--border top-intro--form";
-
+  const topTextClass = (page === "index") ? "top-intro__text" : "top-intro__text top-intro__text--form";
+  
   const topIntroText = {
     index: {
       h1: "Седона — небольшой городок в аризоне, заслуживающий большего!",
@@ -13,10 +13,15 @@ const TopIntro = ( { page }) => {
       p: "Рассмотрим 5 причин, по которым седона круче чем гранд каньон!",
     },
 
-    inner: {
+    form: {
       h1: "Оставьте свой отзыв",
 
       p: "Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях",
+    },
+    blog: {
+      h1: "Блог шерифа",
+
+      p: "Седона удивительный город! горы здесь красного цвета, а местный шериф ведет блог и общается на форумах.",
     },
   }
 
@@ -27,8 +32,12 @@ const TopIntro = ( { page }) => {
       pageText = topIntroText.index;
       break;
     }
-    case "inner": {
-      pageText = topIntroText.inner;
+    case "form": {
+      pageText = topIntroText.form;
+      break;
+    }
+    case "blog": {
+      pageText = topIntroText.blog;
       break;
     }
     default: {

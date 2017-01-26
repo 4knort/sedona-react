@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { Route, IndexRoute } from 'react-router';
 import { HotRouter } from 'utils';
 
-import { IndexPage, FormPage } from 'pages';
+import { IndexPage, FormPage, BlogPage } from 'pages';
 import { App } from 'components';
 
 const AppRouter = ({ history }) => (
@@ -10,6 +10,7 @@ const AppRouter = ({ history }) => (
     <Route path="/" component={App}>
       <IndexRoute component={IndexPage} />
       <Route path="/form" component={FormPage} />
+      <Route path="/blog" component={BlogPage} />
     </Route>
   </HotRouter>
 );
