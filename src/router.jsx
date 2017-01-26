@@ -11,6 +11,7 @@ const AppRouter = ({ history }) => (
       <IndexRoute component={IndexPage} />
       <Route path="/form" component={FormPage} />
       <Route path="/blog" component={BlogPage} />
+      <Route path="article/:title" component={BlogPage} />
     </Route>
   </HotRouter>
 );

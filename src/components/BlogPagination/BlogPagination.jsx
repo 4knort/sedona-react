@@ -54,7 +54,7 @@ const BlogPagination = ({
         breakLabel={<a href="">...</a>}
         breakClassName={"blog-pagination__break"}
         pageCount={amountOfPages}
-        marginPagesDisplayed={2}
+        marginPagesDisplayed={1}
         pageRangeDisplayed={2}
         onPageChange={handlePageClick}
         containerClassName={"blog-pagination__list"}
