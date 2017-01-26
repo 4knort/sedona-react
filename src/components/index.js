@@ -19,6 +19,7 @@ export InnerPromo from './InnerPromo/InnerPromo';
 export FormTitle from './FormTitle/FormTitle';
 export BlogPagination from './BlogPagination/BlogPagination';
 export Article from './Article/Article';
+export FullArticle from './FullArticle/FullArticle';
 
 // svg icons
 export Welcome from './svgIcons/Welcome' 

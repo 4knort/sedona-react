@@ -3,7 +3,7 @@ import { Route, IndexRoute } from 'react-router';
 import { HotRouter } from 'utils';
 
 import { IndexPage, FormPage, BlogPage } from 'pages';
-import { App } from 'components';
+import { App, FullArticle } from 'components';
 
 const AppRouter = ({ history }) => (
   <HotRouter history={history}>
@@ -11,7 +11,7 @@ const AppRouter = ({ history }) => (
       <IndexRoute component={IndexPage} />
       <Route path="/form" component={FormPage} />
       <Route path="/blog" component={BlogPage} />
-      <Route path="article/:title" component={BlogPage} />
+      <Route path="article/:id" component={FullArticle} />
     </Route>
   </HotRouter>
 );

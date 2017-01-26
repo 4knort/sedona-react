@@ -16,12 +16,14 @@ dream.customType('article:description', (helper) => helper.chance.sentence({ wor
 dream.customType('article:article', (helper) => helper.chance.sentence({ words: config.articleLength }));
 dream.customType('article:title', (helper) => helper.chance.sentence({ words: config.titleLength }));
 dream.customType('article:tag', (helper) => helper.oneOf(config.tags));
+dream.customType('randomId', uuid.v4);
 
 dream.schema('article', {
   title: 'article:title',
   description: 'article:description',
   article: 'article:article',
   tag: 'article:tag',
+  id: 'randomId',
 });
 
 mkdirp('./public', (err) => {
