@@ -22,19 +22,6 @@ function loadState() {
   }
 }
 
-function saveState(state) {
-  try {
-    // remove routing before saving: it ruins everything!
-    const stateToSave = { ...state };
-    delete stateToSave.routing;
-
-    localStorage.setItem('state', JSON.stringify(stateToSave));
-    return null;
-  } catch (e) {
-    return null;
-  }
-}
-
 const configureStore = (initialState = loadState()) => {
   // Prevent redux devTools initialization in production
   const store = createStore(rootReducer, initialState, compose(
@@ -43,11 +30,6 @@ const configureStore = (initialState = loadState()) => {
       ? window.devToolsExtension()
       : f => f
   ));
-
-  // Save state to localStorage every second
-  store.subscribe(throttle(() => {
-    saveState(store.getState());
-  }, 1000));
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers

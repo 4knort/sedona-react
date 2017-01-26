@@ -15,3 +15,11 @@ export function fetchArticles() {
     });
   };
 }
+
+export function articleSetPage(from, to) {
+  return {
+    type: types.SET_PAGE,
+    from,
+    to,
+  }
+}

@@ -5,9 +5,37 @@
     font-size:0;
     padding-top:29px;
   }
-  &__button{
+  &__item {
     display:inline-block;
     vertical-align:top;
+    margin-bottom:15px;
+    margin-right:2.8%;
+    cursor: pointer;
+  }
+  &__list {
+    padding: 0;
+    margin: 0;
+    padding-top: 30px;
+    text-align: center;
+  }
+  &__break {
+    display:inline-block;
+    vertical-align:top;
+    margin-bottom:15px;
+    margin-right:2.8%;
+    a {
+      padding:20px 25px;
+      background-color:$blue;
+      color:$white;
+      font-size:$font-big;
+      line-height:$line-height;
+      font-weight:bold;
+      text-decoration:none;
+      pointer-events: none;
+      display: inline-block;
+    }
+  }
+  &__button{
     padding:20px 25px;
     background-color:$blue;
     color:$white;
@@ -15,11 +43,11 @@
     line-height:$line-height;
     font-weight:bold;
     text-decoration:none;
-    margin-right:2.8%;
-    margin-bottom:15px;
-    &--active{
+    display: inline-block;
+    &--active a{
       background-color:#e5e5e5;
       color:#000;
+      outline: none;
     }
     &__title{
       display:none;
@@ -107,7 +135,7 @@
     width:45%;
     display:inline-block;
     vertical-align:top;
-    min-height:300px;
+    min-height:230px;
     margin-right:10%;
     &:nth-child(2n){
       margin-right:0;

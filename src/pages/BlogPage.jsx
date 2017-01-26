@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+import * as dataActions from 'actions/dataActions';
 import { 
   InnerPromo, 
   TopIntro, 
   BlogPagination
 } from 'components';
 
-const BlogPage = () => (
-  <div className="index-page">
+@connect(state => ({ data: state.data }), dataActions)
+export default class BlogPage extends PureComponent {
+  componentWillMount() {
+    this.props.fetchArticles();
+  }
+  render() {
+    return (<div className="blog-page">
     <InnerPromo />
     <TopIntro page="blog" />
-    <BlogPagination />
+    <BlogPagination 
+      articles={this.props.data.articles} 
+      pageArticles={this.props.data.pageArticles} 
+      articlesOnPage={6}
+    />
   </div>
-);
-
-export default BlogPage;
+  )
+  }
+}
