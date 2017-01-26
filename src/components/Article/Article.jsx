@@ -4,7 +4,7 @@ import {
 
 } from 'components';
 
-const Article = ({ article }) => (
+const Article = ({ article, tagSorting }) => (
   <div className="post-preview post-preview--border">
     <h2 className="post-preview__title">
       <Link to={`/article/${article.title}`}>{article.title}</Link>
@@ -13,7 +13,7 @@ const Article = ({ article }) => (
       <Link to={`/article/${article.title}`}>{article.description}</Link>
     </p>
     <div className="post-preview__tags">
-      <a className="post-event" href="#">{article.tag}</a>
+      <a className="post-event" onClick={(e) => tagSorting(e, article.tag)} href="#">{article.tag}</a>
     </div>
   </div>
 );

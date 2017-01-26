@@ -1,2 +1,3 @@
 export const SET_ARTICLES = 'SET_ARTICLES'
 export const SET_PAGE = 'SET_PAGE'
+export const TAG_SORT = 'TAG_SORT'

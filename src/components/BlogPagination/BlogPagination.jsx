@@ -8,22 +8,39 @@ import {
 
 import './blog-pagination.scss';
 
-const BlogPagination = ({ articles, pageArticles, articlesOnPage, articleSetPage }) => {
+const BlogPagination = ({ 
+  articles, 
+  pageArticles, 
+  articlesOnPage, 
+  articleSetPage,
+  tagSort,  
+}) => {
   const amountOfPages = (articles.length / articlesOnPage);
+
+  const tagSorting = (event, tag) => {
+    event.preventDefault();
+    tagSort(tag);
+  }
 
   const articleItems = pageArticles.map(
     (article, index) => (
       <Article
+        tagSorting={tagSorting}
         key={`article-${index}`}
         article={article}
       />
     )
   );
 
+
+
   const handlePageClick = (data) => {
     const selected = data.selected;
     const from = selected * articlesOnPage;
     const to = from + articlesOnPage;
+
+    //calling action to render 
+    //articles that fits a pagenumber
     articleSetPage(from, to);
   };
   return (

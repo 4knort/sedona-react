@@ -23,3 +23,9 @@ export function articleSetPage(from, to) {
     to,
   }
 }
+export function tagSort(tag) {
+  return {
+    type: types.TAG_SORT,
+    payload: tag,
+  }
+}
