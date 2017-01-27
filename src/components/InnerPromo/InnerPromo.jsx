@@ -1,11 +1,11 @@
 import React from 'react';
-import { Sedona } from 'components';
+import { SedonaIcon } from 'components';
 
 import './inner-promo.scss';
 
 const InnerPromo = () => (
   <div className="inner-promo">
-    <Sedona page='inner' />
+    <SedonaIcon page='inner' />
   </div>
 )
 

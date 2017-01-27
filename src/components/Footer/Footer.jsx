@@ -1,5 +1,5 @@
 import React from 'react';
-import { Twitter, Facebook, Youtube, HtmlAcademy } from 'components';
+import { TwitterIcon, FacebookIcon, YoutubeIcon, HtmlAcademyIcon } from 'components';
 
 import './footer.scss'
 
@@ -10,19 +10,19 @@ const Footer = () => (
     </div>
     <div className="social">
       <a href="#" className="social__btn">
-        <Twitter />
+        <TwitterIcon />
       </a>
       <a href="#" className="social__btn">
-        <Facebook />
+        <FacebookIcon />
       </a>
       <a href="#" className="social__btn">
-        <Youtube />
+        <YoutubeIcon />
       </a>
     </div>
     <div className="author">
       Разработано
       <a className="author__link" href="#">
-       <HtmlAcademy />
+       <HtmlAcademyIcon />
       </a>
     </div>
   </footer>

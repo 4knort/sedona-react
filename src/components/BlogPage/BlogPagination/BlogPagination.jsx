@@ -2,9 +2,7 @@ import React from 'react';
 import ReactPaginate from 'react-paginate';
 import { connect } from 'react-redux';
 import * as dataActions from 'actions/dataActions';
-import { 
-  Article,
-} from 'components';
+import { Article } from 'components';
 
 import './blog-pagination.scss';
 

@@ -4,6 +4,7 @@ export Container from './Container/Container';
 export Header from './Header/Header';
 export Footer from './Footer/Footer';
 export TopIntro from './TopIntro/TopIntro';
+export InnerPromo from './InnerPromo/InnerPromo';
 
 // index page
 export IndexPromo from './IndexPage/IndexPromo/IndexPromo';
@@ -14,22 +15,24 @@ export Reasons from './IndexPage/Reasons/Reasons';
 export Hotels from './IndexPage/Hotels/Hotels';
 export Map from './IndexPage/Map/Map';
 
+// blog page
+export BlogPagination from './BlogPage/BlogPagination/BlogPagination';
+export Article from './BlogPage/Article/Article';
+export FullArticle from './BlogPage/FullArticle/FullArticle';
 
-export InnerPromo from './InnerPromo/InnerPromo';
+//form page
 export FormTitle from './FormTitle/FormTitle';
-export BlogPagination from './BlogPagination/BlogPagination';
-export Article from './Article/Article';
-export FullArticle from './FullArticle/FullArticle';
+
 
 // svg icons
-export Welcome from './svgIcons/Welcome' 
-export Gorgeous from './svgIcons/Gorgeous' 
-export Sedona from './svgIcons/Sedona' 
-export GrandCanyon from './svgIcons/GrandCanyon' 
-export Gift from './svgIcons/Gift' 
-export House from './svgIcons/House' 
-export Burger from './svgIcons/Burger' 
-export Twitter from './svgIcons/Twitter' 
-export Facebook from './svgIcons/Facebook' 
-export Youtube from './svgIcons/Youtube' 
-export HtmlAcademy from './svgIcons/HtmlAcademy' 
+export WelcomeIcon from './svgIcons/WelcomeIcon' 
+export GorgeousIcon from './svgIcons/GorgeousIcon' 
+export SedonaIcon from './svgIcons/SedonaIcon' 
+export GrandCanyonIcon from './svgIcons/GrandCanyonIcon' 
+export GiftIcon from './svgIcons/GiftIcon' 
+export HouseIcon from './svgIcons/HouseIcon' 
+export BurgerIcon from './svgIcons/BurgerIcon' 
+export TwitterIcon from './svgIcons/TwitterIcon' 
+export FacebookIcon from './svgIcons/FacebookIcon' 
+export YoutubeIcon from './svgIcons/YoutubeIcon' 
+export HtmlAcademyIcon from './svgIcons/HtmlAcademyIcon' 

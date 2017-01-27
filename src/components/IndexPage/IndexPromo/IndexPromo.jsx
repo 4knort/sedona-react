@@ -1,14 +1,14 @@
 import React from 'react';
-import { Welcome, Gorgeous, Sedona , GrandCanyon } from 'components';
+import { WelcomeIcon, GorgeousIcon, SedonaIcon , GrandCanyonIcon } from 'components';
 
 import './index-promo.scss';
 
 const IndexPromo = () => (
   <div className="index-promo">
-    <Welcome />
-    <Gorgeous />
-    <Sedona />
-    <GrandCanyon />
+    <WelcomeIcon />
+    <GorgeousIcon />
+    <SedonaIcon />
+    <GrandCanyonIcon />
   </div>
 )
 
