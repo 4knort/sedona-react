@@ -21,7 +21,11 @@ export Article from './BlogPage/Article/Article';
 export FullArticle from './BlogPage/FullArticle/FullArticle';
 
 //form page
-export FormTitle from './FormTitle/FormTitle';
+export FormTitle from './FormPage/FormTitle/FormTitle';
+export Form from './FormPage/Form/Form';
+export RenderField from './FormPage/RenderField/RenderField';
+export RenderRadio from './FormPage/RenderRadio/RenderRadio';
+export Counter from './FormPage/Counter/Counter';
 
 
 // svg icons

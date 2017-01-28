@@ -1,0 +1,152 @@
+$charset: "UTF-8";
+
+.counter{
+  font-size:0;
+  margin-bottom:20px;
+  position:relative;
+  &__tablet{
+    display:none;
+  }
+  &__btn{
+    display:inline-block;
+    vertical-align:top;
+    padding:30px 30px;
+    background-color:$grey-f2;
+    position:relative;
+    &:hover{
+      background-color:darken($grey-f2, 5%);
+    }
+    &:active{
+      background-color:darken($grey-f2, 15%);
+    }
+    &--minus{
+      margin-right:6px;
+      &:before{
+        content:"";
+        position:absolute;
+        top:28px;
+        left:20px;
+        height:4px;
+        width:20px;
+        background-color:#b8b8b8;
+      }
+    }
+    &--plus{
+      &:before{
+        content:"";
+        position:absolute;
+        top:28px;
+        left:20px;
+        height:4px;
+        width:20px;
+        background-color:#b8b8b8;
+      }
+      &:after{
+        content:"";
+        position:absolute;
+        top:20px;
+        left:28px;
+        width:4px;
+        height:20px;
+        background-color:#b8b8b8;
+      }
+    }
+  }
+  &__input{
+    display:inline-block;
+    vertical-align:top;
+    font-family:$font-family;
+    line-height:$line-height-input;
+    font-size:$font-title;
+    font-weight:bold;
+    background-color:$grey-f2;
+    border:none;
+    outline:none;
+    padding:17px 22px;
+    padding-right:48px;
+    width:95px;
+    margin-right:6px;
+    position:relative;
+    &:hover{
+      background-color:darken($grey-f2, 5%);
+    }
+    &:focus{
+      background-color:#fff;
+      box-shadow:inset 0 0 7px 0  #c8c8c8;
+    }
+  }
+  &--days:after{
+    content:"дн.";
+    position:absolute;
+    top:22px;
+    left:166px;
+    font-size:$font-title;
+    font-weight:small-caps;
+    color:#a9a9a9;
+    text-transform:none;
+  }
+  &--men:after{
+    content:"чел.";
+    position:absolute;
+    top:22px;
+    left:166px;
+    font-size:$font-title;
+    color:#a9a9a9;
+    font-weight:small-caps;
+    text-transform:none;
+  }
+}
+
+@media(min-width: $mobile){
+  .counter{
+    &__mobile{
+      display:none;
+    }
+    &__tablet{
+      display:inline;
+    }
+    &__btn{
+      &--minus{
+        margin-right:0;
+      }
+    }
+    &__input{
+      padding-right:0;
+      padding:17px 14px;
+      width:28px;
+      margin-right:0;
+      text-align:center;
+    }
+    &:after{
+      display:none;
+    }
+    &--days{
+      text-align:center;
+    }
+  }
+}
+
+@media(min-width: $tablet){
+  .counter{
+    position:relative;
+    &__btn{
+      &--minus{
+        margin-right:5px;
+      }
+    }
+    &:after{
+      display:block;
+      left:56%;
+    }
+    &__input{
+      padding:17px 22px;
+      padding-right:48px;
+      width:50px;
+      margin-right:6px;
+      text-align:left;
+    }
+    &--men:after{
+      left:142px;
+    }
+  }
+}

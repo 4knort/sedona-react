@@ -12,24 +12,28 @@ const FormTitle = ( { block } ) => {
         class: 'form-title--radio',
         text: 'Ваше Общее впечатление:'
       }
+      break;
     }
-    case 'travel': {
+    case 'date': {
       componentInfo = {
         class: 'form-title--travel',
         text: 'Даты вашей поездки:'
       }
+      break;
     }
     case 'radio': {
       componentInfo = {
         class: 'form-title--radio',
         text: 'Ваше Общее впечатление:'
       }
+      break;
     }
     case 'count': {
       componentInfo = {
         class: '',
         text: 'Кол-во путешественников:'
       }
+      break;
     }
     default: {
       componentInfo = {
