@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { RenderField, RenderRadio, FormTitle, Counter } from 'components';
-import { CounterDaysContainer } from 'containers';
+import { CounterDaysContainer, CounterTravelersContainer } from 'containers';
 import moment from 'moment';
 
 import './form.scss'
@@ -64,8 +64,27 @@ class Form extends Component {
           component={RenderField} id="dateEnd" label="Дата отъезда" disabled  placeholder={formatedEndDate}
           validate={[ required, dateFormat ]}
         />
-        <Counter id="travelers" type="text" classModifier="counter--men" label="Кол-во путешественников" disabled   component={Counter} />
-        
+        <FormTitle block="travelers" />
+        <CounterTravelersContainer />
+        <FormTitle block="visited" />
+        <ul className="checkbox-list">
+          <li className="checkbox-list__item">
+            <Field name="bridge" className="form-checkbox" component="input" type="checkbox" id="bridge"/>
+            <label className="label-checkbox" htmlFor="bridge">Мост Дьявола</label>
+          </li>
+          <li className="checkbox-list__item">
+            <Field name="park" className="form-checkbox" component="input" type="checkbox" id="park"/>
+            <label className="label-checkbox" htmlFor="park">Слайд-парк</label>
+          </li>
+          <li className="checkbox-list__item">
+            <Field name="mountain" className="form-checkbox" component="input" type="checkbox" id="mountain"/>
+            <label className="label-checkbox" htmlFor="mountain">Гора-Колокол</label>
+          </li>
+          <li className="checkbox-list__item">
+            <Field name="rock" className="form-checkbox" component="input" type="checkbox" id="rock"/>
+            <label className="label-checkbox" htmlFor="rock">Красные скалы</label>
+          </li>
+        </ul>
       </form>
     )
   }

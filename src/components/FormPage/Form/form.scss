@@ -205,3 +205,74 @@
 }
 
 
+.checkbox-list{
+  padding:0;
+  margin:0;
+  list-style-type:none;
+  &__item{
+    margin-bottom:62px;
+  }
+}
+
+@media(min-width: $mobile){
+  .checkbox-list{
+    text-align:center;
+    &__item{
+      display:inline-block;
+      vertical-align:top;
+      width:50%;
+      box-sizing:border-box;
+      padding:0 25px;
+      &:nth-child(2n){
+        text-align:left;
+      }
+    }
+  }
+}
+
+@media(min-width: $tablet){
+  .checkbox-list{
+    text-align:left;
+    &__item{
+      width:25%;
+      padding:0;
+    }
+  }
+}
+
+.form-checkbox{
+  display:none;
+}
+
+.label-checkbox{
+  font-size:$font-title;
+  font-weight:bold;
+  text-transform:none;
+  padding-left:80px;
+  position:relative;
+  cursor:pointer;
+  &:before{
+    content:"";
+    position:absolute;
+    background:url("./img/sprite.png") no-repeat -5px -5px;
+    width:56px;
+    height:56px;
+    top:-15px;
+    left:0;
+  }
+}
+.form-checkbox:checked + .label-checkbox:before{
+  background-position:-203px -5px;
+}
+.form-checkbox:checked + .label-checkbox:hover:before{
+  background-position:-335px -5px;
+}
+.form-checkbox:checked + .label-checkbox:active:before{
+  background-position:-269px -5px;
+}
+.form-checkbox + .label-checkbox:hover:before{
+  background-position:-137px -5px;
+}
+.form-checkbox + .label-checkbox:active:before{
+  background-position:-71px -5px;
+}

@@ -28,10 +28,17 @@ const FormTitle = ( { block } ) => {
       }
       break;
     }
-    case 'count': {
+    case 'travelers': {
       componentInfo = {
         class: '',
         text: 'Кол-во путешественников:'
+      }
+      break;
+    }
+    case 'visited': {
+      componentInfo = {
+        class: 'form-title--visited',
+        text: 'Посещенные достопримечательности:'
       }
       break;
     }

@@ -4,8 +4,9 @@ const initialState = {
   articles: [],
   pageArticles: [],
   days: 0,
+  travelersCount: 0,
+  travelers: [],
 };
-
 
 export default function data(state = initialState, action) {
   switch(action.type) {
@@ -25,14 +26,14 @@ export default function data(state = initialState, action) {
     case types.TAG_SORT: {
       return {
         ...state,
-        articles: state.articles.filter( 
+        articles: state.articles.slice(0).filter( 
           ( item ) => {
             if (item.tag.toLowerCase() === action.payload.toLowerCase()) {
               return item
             }
           }
         ),
-        pageArticles: state.articles.filter( 
+        pageArticles: state.articles.slice(0).filter( 
           ( item ) => {
             if (item.tag.toLowerCase() === action.payload.toLowerCase()) {
               return item
@@ -42,15 +43,29 @@ export default function data(state = initialState, action) {
       };
     }
     case types.CHANGE_DAY: {
-      if (action.payload === 'plus') {
+      if (action.payload === 'minus') {
         return {
           ...state,
-          days: state.days + 1,
+          days: state.days - 1,
         }
       } else {
         return {
           ...state,
-          days: state.days - 1,
+          days: state.days + 1,
+        }
+      }
+    }
+    case types.CHANGE_TRAVELER: {
+      if (action.payload === 'minus') {
+        return {
+          ...state,
+          travelersCount: state.travelersCount - 1,
+        }
+      } else {
+        return {
+          ...state,
+          travelersCount: state.travelersCount + 1,
+          travelers: state.travelers.slice(0).push(action.template),
         }
       }
     }

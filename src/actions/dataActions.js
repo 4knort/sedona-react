@@ -37,3 +37,12 @@ export function changeDay(direction) {
     payload: direction,
   };
 }
+
+export function changeTraveler(direction, template) {
+  
+  return {
+    type: types.CHANGE_TRAVELER,
+    payload: direction,
+    template: template,
+  };
+}
