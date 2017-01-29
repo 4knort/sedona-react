@@ -1,44 +1,32 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form'; 
+import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 import { RenderField, RenderRadio, FormTitle, Counter } from 'components';
+import { CounterDaysContainer } from 'containers';
 import moment from 'moment';
 
 import './form.scss'
 
-@reduxForm({ form: 'FormContest'})
-export default class Form extends Component {
 
-  state = {
-    days: 0,
-  }
 
-  newDate(date) {
-    if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/i.test(date)) {
-      todayDate = moment(date).add(this.state.days, "days");
-      formatedTodayDate = moment(date).format('L');
-    } 
-  }
+class Form extends Component {
 
-  changeDays = (e, direction) => {
-    e.preventDefault();
-    if ( direction === 'plus' ) {
-      this.setState( { days:  this.state.days + 1 });
-    } else {
-      this.setState( { days: this.state.days - 1 });
-    }
-  }
+  
+
+  
+
   render() {
-    const { handleSubmit, pristine, reset, submitting } = this.props;
+    const { handleSubmit, pristine, reset, submitting, days } = this.props;
 
+    //dates
+    const formatedTodayDate =  moment(new Date()).format('L');
+    const formatedEndDate = moment(new Date()).add(days, "days").format('L');
+
+    //validation
     const required = value => value ? undefined : 'Required';
     const dateFormat = value =>
     value && !/^\d{1,2}\/\d{1,2}\/\d{4}$/i.test(value) ?
     'date format must be dd/mm/yyyy' : undefined;
-
-
-    let todayDate = moment(new Date()).add(this.state.days, "days");
-    let formatedTodayDate =  moment(new Date()).format('L');
-    const formatedEndDate = todayDate.format('L');
 
     return (
       <form onSubmit={handleSubmit} action="" className="form">
@@ -68,15 +56,28 @@ export default class Form extends Component {
         </ul>
         <FormTitle block="date" />
         <Field name="date" type="text" 
-          component={RenderField} id="date" label="Дата приезда" onChange={this.newDate} placeholder={formatedTodayDate}
+          component={RenderField} id="date" label="Дата приезда"  placeholder={formatedTodayDate}
           validate={[ required, dateFormat ]}
         />
-        <Counter id="days" type="text" label="Дней пребывания:" disabled onChange={this.changeDays} placeholder={this.state.days} component={Counter} />
+        <CounterDaysContainer />
         <Field name="date" type="text" 
-          component={RenderField} id="dateEnd" label="Дата отъезда" onChange={this.newDate} disabled placeholder={formatedEndDate}
+          component={RenderField} id="dateEnd" label="Дата отъезда" disabled  placeholder={formatedEndDate}
           validate={[ required, dateFormat ]}
         />
+        <Counter id="travelers" type="text" classModifier="counter--men" label="Кол-во путешественников" disabled   component={Counter} />
+        
       </form>
     )
   }
 }
+
+Form = reduxForm({
+  form: 'FormContest',
+})(Form);
+
+export default connect( state => ({
+  days: state.data.days,
+}), null)(Form);
+
+ 
+

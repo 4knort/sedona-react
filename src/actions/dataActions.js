@@ -23,9 +23,17 @@ export function articleSetPage(from, to) {
     to,
   }
 }
+
 export function tagSort(tag) {
   return {
     type: types.TAG_SORT,
     payload: tag,
   }
+}
+
+export function changeDay(direction) {
+  return {
+    type: types.CHANGE_DAY,
+    payload: direction,
+  };
 }

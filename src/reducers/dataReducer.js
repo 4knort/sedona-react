@@ -3,6 +3,7 @@ import * as types from 'constants/actionTypes';
 const initialState = {
   articles: [],
   pageArticles: [],
+  days: 0,
 };
 
 
@@ -40,8 +41,24 @@ export default function data(state = initialState, action) {
         ).slice(0, 6),
       };
     }
+    case types.CHANGE_DAY: {
+      if (action.payload === 'plus') {
+        return {
+          ...state,
+          days: state.days + 1,
+        }
+      } else {
+        return {
+          ...state,
+          days: state.days - 1,
+        }
+      }
+    }
     default: {
       return state;
     }
   }
 }
+
+
+
