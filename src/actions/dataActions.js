@@ -39,10 +39,20 @@ export function changeDay(direction) {
 }
 
 export function changeTraveler(direction, template) {
-  
   return {
     type: types.CHANGE_TRAVELER,
     payload: direction,
     template: template,
+  };
+}
+
+export function sendData() {
+  const request = axios.post('https://echo.htmlacademy.ru/adaptive?').then(response => {
+    console.log(response)
+  })
+
+  return {
+    type: types.SEND_DATA,
+    payload: request,
   };
 }

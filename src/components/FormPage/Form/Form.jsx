@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { RenderField, RenderRadio, FormTitle, Counter } from 'components';
 import { CounterDaysContainer, CounterTravelersContainer } from 'containers';
+import * as dataActions from '../../../actions/dataActions';
 import moment from 'moment';
 
 import './form.scss'
@@ -11,12 +12,8 @@ import './form.scss'
 
 class Form extends Component {
 
-  
-
-  
-
   render() {
-    const { handleSubmit, pristine, reset, submitting, days } = this.props;
+    const { handleSubmit, pristine, reset, submitting, days, sendData } = this.props;
 
     //dates
     const formatedTodayDate =  moment(new Date()).format('L');
@@ -29,7 +26,7 @@ class Form extends Component {
     'date format must be dd/mm/yyyy' : undefined;
 
     return (
-      <form onSubmit={handleSubmit} action="" className="form">
+      <form onSubmit={handleSubmit(sendData)} action="" className="form">
         <FormTitle />
         <Field name="name" type="text" 
           component={RenderField} id="name" label="Имя" 
@@ -85,6 +82,10 @@ class Form extends Component {
             <label className="label-checkbox" htmlFor="rock">Красные скалы</label>
           </li>
         </ul>
+        <div>
+        <button className="submit-btn" type="submit" disabled={pristine || submitting}>Submit</button>
+        <button className="submit-btn" type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
+      </div>
       </form>
     )
   }
@@ -96,7 +97,7 @@ Form = reduxForm({
 
 export default connect( state => ({
   days: state.data.days,
-}), null)(Form);
+}), dataActions)(Form);
 
  
 

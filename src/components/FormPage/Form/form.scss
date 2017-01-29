@@ -276,3 +276,25 @@
 .form-checkbox + .label-checkbox:active:before{
   background-position:-71px -5px;
 }
+
+.submit-btn{
+  border:none;
+  outline:none;
+  text-transform:uppercase;
+  font-weight:bold;
+  margin:0 auto;
+  display:inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+  background-color:$blue;
+  width:280px;
+  padding:16px 0;
+  font-size:$font-big;
+  color:$white;
+  &:hover{
+    background-color:darken($blue, 5%);
+  }
+  &:active{
+    background-color:darken($blue, 15%);
+  }
+}
