@@ -56,7 +56,7 @@ const TopIntro = ( { page }) => {
   )
 }
 
-FormTitle.PropTypes = {
+TopIntro.PropTypes = {
   page: React.PropTypes.string,
 }
 
