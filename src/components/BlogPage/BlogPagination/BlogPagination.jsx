@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ReactPaginate from 'react-paginate';
 import { connect } from 'react-redux';
 import * as dataActions from 'actions/dataActions';
@@ -6,13 +6,7 @@ import { Article } from 'components';
 
 import './blog-pagination.scss';
 
-const BlogPagination = ({ 
-  articles, 
-  pageArticles, 
-  articlesOnPage, 
-  articleSetPage,
-  tagSort,  
-}) => {
+const BlogPagination = ({ articles, pageArticles, articlesOnPage, articleSetPage, tagSort,  }) => {
   const amountOfPages = (articles.length / articlesOnPage);
 
   const tagSorting = (event, tag) => {
@@ -70,5 +64,12 @@ const BlogPagination = ({
   )
 };
 
-// export default BlogPagination;
+BlogPagination.PropTypes = {
+  articlesOnPage: React.PropTypes.number.isRequired,
+  articleSetPage: React.PropTypes.func.isRequired,
+  tagSort: React.PropTypes.func.isRequired,
+  articles: React.PropTypes.arrayOf(PropTypes.obj),
+  pageArticles: React.PropTypes.arrayOf(PropTypes.obj),
+};
+
 export default connect(null, dataActions)(BlogPagination);

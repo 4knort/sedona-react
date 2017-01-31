@@ -1,8 +1,5 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import { 
-
-} from 'components';
 
 const Article = ({ article, tagSorting }) => (
   <div className="post-preview post-preview--border">
@@ -17,5 +14,10 @@ const Article = ({ article, tagSorting }) => (
     </div>
   </div>
 );
+
+Article.PropTypes = {
+  article: React.PropTypes.object.isRequired,
+  tagSorting: React.PropTypes.func.isRequired,
+};
 
 export default Article;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import './container.scss';
 
@@ -7,5 +7,9 @@ const Container = ( {children} ) => (
     {children}
   </div>
 );
+
+Container.propTypes = {
+  children: PropTypes.any,
+};
 
 export default Container;

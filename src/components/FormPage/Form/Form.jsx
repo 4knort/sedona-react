@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { RenderField, RenderRadio, FormTitle, Counter } from 'components';
@@ -11,7 +11,15 @@ import './form.scss'
 
 
 class Form extends Component {
-
+  static PropTypes = {
+    handleSubmit: React.PropTypes.func.isRequired,
+    pristine: React.PropTypes.bool.isRequired,
+    reset: React.PropTypes.func.isRequired,
+    submitting: React.PropTypes.bool.isRequired,
+    days: React.PropTypes.number.isRequired,
+    sendData: React.PropTypes.func.isRequired,
+  }
+  
   render() {
     const { handleSubmit, pristine, reset, submitting, days, sendData } = this.props;
 

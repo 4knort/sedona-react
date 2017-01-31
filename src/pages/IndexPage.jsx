@@ -29,6 +29,6 @@ export default class IndexPage extends PureComponent {
     <Hotels />
     <Map />
   </div>
-  )
+    )
   }
 }

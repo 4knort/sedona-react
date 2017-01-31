@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router';
 import * as dataActions from 'actions/dataActions';
@@ -10,6 +10,10 @@ import './full-article.scss'
   articles: state.data.articles,
 }), dataActions)
 export default class FullArticle extends PureComponent {
+  static propTypes = {
+    articles: React.PropTypes.arrayOf(PropTypes.obj).isRequired,
+  }
+
   componentDidMount() {
     if (!this.props.articles.length) {
       this.props.fetchArticles();

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import './top-intro.scss';
 
@@ -54,6 +54,10 @@ const TopIntro = ( { page }) => {
     </p>
   </div>
   )
+}
+
+FormTitle.PropTypes = {
+  page: React.PropTypes.string,
 }
 
 export default TopIntro;

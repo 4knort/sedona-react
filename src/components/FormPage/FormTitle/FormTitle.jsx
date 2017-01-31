@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { IndexPromo } from 'components';
 
 import './form-title.scss';
@@ -52,5 +52,9 @@ const FormTitle = ( { block } ) => {
 
   return <h2 className={`form-title ${componentInfo.class}`}>{componentInfo.text}</h2>
 };
+
+FormTitle.PropTypes = {
+  block: React.PropTypes.string,
+}
 
 export default FormTitle;
