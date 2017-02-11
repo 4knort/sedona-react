@@ -9,6 +9,11 @@ import {
 
 @connect(state => ({ data: state.data }), dataActions)
 export default class BlogPage extends PureComponent {
+  static propTypes = {
+    data: PropTypes.object,
+    fetchArticles: PropTypes.func,
+  }
+
   componentWillMount() {
     this.props.fetchArticles();
   }
@@ -26,7 +31,3 @@ export default class BlogPage extends PureComponent {
   }
 }
 
-BlogPage.propTypes = {
-  data: PropTypes.object,
-  fetchArticles: PropTypes.function,
-};

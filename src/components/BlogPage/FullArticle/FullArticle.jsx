@@ -12,8 +12,8 @@ import './full-article.scss';
 export default class FullArticle extends PureComponent {
   static propTypes = {
     articles: PropTypes.arrayOf(PropTypes.object).isRequired,
-    fetchArticles: PropTypes.function,
-    params: PropTypes.Object,
+    fetchArticles: PropTypes.func,
+    params: PropTypes.object,
   }
 
   componentDidMount() {
