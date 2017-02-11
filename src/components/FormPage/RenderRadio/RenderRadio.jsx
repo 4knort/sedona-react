@@ -5,6 +5,6 @@ const RenderRadio = ({ input, checked, name, text, value, label, type, id, meta:
     <input className="form-radio" type={type} id={id} name="impression" value={value} />
     <label className="label-radio" htmlFor={id}>{text}</label>
   </li>
-)
+);
 
 export default RenderRadio;

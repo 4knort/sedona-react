@@ -5,8 +5,8 @@ import './inner-promo.scss';
 
 const InnerPromo = () => (
   <div className="inner-promo">
-    <SedonaIcon page='inner' />
+    <SedonaIcon page="inner" />
   </div>
-)
+);
 
 export default InnerPromo;

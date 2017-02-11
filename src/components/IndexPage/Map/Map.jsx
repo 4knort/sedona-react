@@ -3,7 +3,7 @@ import React from 'react';
 import './map.scss';
 
 const Map = () => (
-  <div className="map"></div>
+  <div className="map" />
 );
 
 export default Map;

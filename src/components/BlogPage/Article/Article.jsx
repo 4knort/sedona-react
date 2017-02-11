@@ -15,9 +15,9 @@ const Article = ({ article, tagSorting }) => (
   </div>
 );
 
-Article.PropTypes = {
-  article: React.PropTypes.object.isRequired,
-  tagSorting: React.PropTypes.func.isRequired,
+Article.propTypes = {
+  article: PropTypes.object.isRequired,
+  tagSorting: PropTypes.func.isRequired,
 };
 
 export default Article;

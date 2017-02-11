@@ -9,12 +9,12 @@ const initialState = {
 };
 
 export default function data(state = initialState, action) {
-  switch(action.type) {
+  switch (action.type) {
     case types.SET_ARTICLES: {
       return {
         ...state,
         articles: action.payload.slice(0),
-        pageArticles: action.payload.slice(0, 6)
+        pageArticles: action.payload.slice(0, 6),
       };
     }
     case types.SET_PAGE: {
@@ -26,17 +26,17 @@ export default function data(state = initialState, action) {
     case types.TAG_SORT: {
       return {
         ...state,
-        articles: state.articles.slice(0).filter( 
-          ( item ) => {
+        articles: state.articles.slice(0).filter(
+          (item) => {
             if (item.tag.toLowerCase() === action.payload.toLowerCase()) {
-              return item
+              return item;
             }
           }
         ),
-        pageArticles: state.articles.slice(0).filter( 
-          ( item ) => {
+        pageArticles: state.articles.slice(0).filter(
+          (item) => {
             if (item.tag.toLowerCase() === action.payload.toLowerCase()) {
-              return item
+              return item;
             }
           }
         ).slice(0, 6),
@@ -47,12 +47,12 @@ export default function data(state = initialState, action) {
         return {
           ...state,
           days: state.days - 1,
-        }
+        };
       } else {
         return {
           ...state,
           days: state.days + 1,
-        }
+        };
       }
     }
     case types.CHANGE_TRAVELER: {
@@ -60,13 +60,13 @@ export default function data(state = initialState, action) {
         return {
           ...state,
           travelersCount: state.travelersCount - 1,
-        }
+        };
       } else {
         return {
           ...state,
           travelersCount: state.travelersCount + 1,
           travelers: state.travelers.slice(0).push(action.template),
-        }
+        };
       }
     }
     default: {
@@ -74,6 +74,4 @@ export default function data(state = initialState, action) {
     }
   }
 }
-
-
 

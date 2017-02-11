@@ -1,7 +1,7 @@
 import React from 'react';
 import { TwitterIcon, FacebookIcon, YoutubeIcon, HtmlAcademyIcon } from 'components';
 
-import './footer.scss'
+import './footer.scss';
 
 const Footer = () => (
   <footer className="main-footer">
@@ -22,7 +22,7 @@ const Footer = () => (
     <div className="author">
       Разработано
       <a className="author__link" href="#">
-       <HtmlAcademyIcon />
+        <HtmlAcademyIcon />
       </a>
     </div>
   </footer>

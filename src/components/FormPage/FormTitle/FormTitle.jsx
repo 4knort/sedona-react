@@ -1,60 +1,50 @@
 import React, { PropTypes } from 'react';
-import { IndexPromo } from 'components';
 
 import './form-title.scss';
 
-const FormTitle = ( { block } ) => {
-  let componentInfo = {};
-
-  switch(block) {
+function formTitleText(block) {
+  switch (block) {
     case 'radio': {
-      componentInfo = {
+      return {
         class: 'form-title--radio',
-        text: 'Ваше Общее впечатление:'
-      }
-      break;
+        text: 'Ваше Общее впечатление:',
+      };
     }
     case 'date': {
-      componentInfo = {
+      return {
         class: 'form-title--travel',
-        text: 'Даты вашей поездки:'
-      }
-      break;
-    }
-    case 'radio': {
-      componentInfo = {
-        class: 'form-title--radio',
-        text: 'Ваше Общее впечатление:'
-      }
-      break;
+        text: 'Даты вашей поездки:',
+      };
     }
     case 'travelers': {
-      componentInfo = {
+      return {
         class: '',
-        text: 'Кол-во путешественников:'
-      }
-      break;
+        text: 'Кол-во путешественников:',
+      };
     }
     case 'visited': {
-      componentInfo = {
+      return {
         class: 'form-title--visited',
-        text: 'Посещенные достопримечательности:'
-      }
-      break;
+        text: 'Посещенные достопримечательности:',
+      };
     }
     default: {
-      componentInfo = {
+      return {
         class: '',
-        text: 'Представьтесь, пожалуйста:'
-      }
+        text: 'Представьтесь, пожалуйста:',
+      };
     }
   }
+}
 
-  return <h2 className={`form-title ${componentInfo.class}`}>{componentInfo.text}</h2>
+const FormTitle = ({ block }) => {
+  const data = formTitleText(block);
+
+  return <h2 className={`form-title ${data.class}`}>{data.text}</h2>;
 };
 
-FormTitle.PropTypes = {
-  block: React.PropTypes.string,
-}
+FormTitle.propTypes = {
+  block: PropTypes.string,
+};
 
 export default FormTitle;

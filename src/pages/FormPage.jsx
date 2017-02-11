@@ -1,9 +1,8 @@
 import React from 'react';
-import { 
-  InnerPromo, 
-  TopIntro, 
-  FormTitle,
-  Form, 
+import {
+  InnerPromo,
+  TopIntro,
+  Form,
 } from 'components';
 
 const FormPage = () => (

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router';
 import * as dataActions from 'actions/dataActions';
 
-import './full-article.scss'
+import './full-article.scss';
 
 @withRouter
 @connect(state => ({
@@ -11,7 +11,9 @@ import './full-article.scss'
 }), dataActions)
 export default class FullArticle extends PureComponent {
   static propTypes = {
-    articles: React.PropTypes.arrayOf(PropTypes.obj).isRequired,
+    articles: PropTypes.arrayOf(PropTypes.object).isRequired,
+    fetchArticles: PropTypes.function,
+    params: PropTypes.Object,
   }
 
   componentDidMount() {

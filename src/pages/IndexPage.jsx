@@ -2,14 +2,14 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import * as dataActions from 'actions/dataActions';
 
-import { 
-  IndexPromo, 
-  TopIntro, 
-  Town, 
-  Features, 
-  Bridge, 
-  Reasons, 
-  Hotels, 
+import {
+  IndexPromo,
+  TopIntro,
+  Town,
+  Features,
+  Bridge,
+  Reasons,
+  Hotels,
   Map,
 } from 'components';
 
@@ -20,15 +20,15 @@ export default class IndexPage extends PureComponent {
   }
   render() {
     return (<div className="index-page">
-    <IndexPromo />
-    <TopIntro />
-    <Town />
-    <Features />
-    <Bridge />
-    <Reasons />
-    <Hotels />
-    <Map />
-  </div>
-    )
+      <IndexPromo />
+      <TopIntro />
+      <Town />
+      <Features />
+      <Bridge />
+      <Reasons />
+      <Hotels />
+      <Map />
+    </div>
+    );
   }
 }

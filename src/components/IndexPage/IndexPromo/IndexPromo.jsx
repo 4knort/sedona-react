@@ -1,5 +1,5 @@
 import React from 'react';
-import { WelcomeIcon, GorgeousIcon, SedonaIcon , GrandCanyonIcon } from 'components';
+import { WelcomeIcon, GorgeousIcon, SedonaIcon, GrandCanyonIcon } from 'components';
 
 import './index-promo.scss';
 
@@ -10,6 +10,6 @@ const IndexPromo = () => (
     <SedonaIcon />
     <GrandCanyonIcon />
   </div>
-)
+);
 
 export default IndexPromo;
