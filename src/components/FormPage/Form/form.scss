@@ -14,7 +14,9 @@
     padding:0 60px;
   }
 }
-
+.submit-btns-wrap {
+  text-align: center;
+}
 .form-input{
   box-sizing:border-box;
   display:inline-block;
@@ -279,6 +281,7 @@
 
 .submit-btn{
   border:none;
+  cursor: pointer;
   outline:none;
   text-transform:uppercase;
   font-weight:bold;

@@ -4,8 +4,6 @@ const initialState = {
   articles: [],
   pageArticles: [],
   days: 0,
-  travelersCount: 0,
-  travelers: [],
 };
 
 export default function data(state = initialState, action) {
@@ -52,20 +50,6 @@ export default function data(state = initialState, action) {
         return {
           ...state,
           days: state.days + 1,
-        };
-      }
-    }
-    case types.CHANGE_TRAVELER: {
-      if (action.payload === 'minus') {
-        return {
-          ...state,
-          travelersCount: state.travelersCount - 1,
-        };
-      } else {
-        return {
-          ...state,
-          travelersCount: state.travelersCount + 1,
-          travelers: state.travelers.slice(0).push(action.template),
         };
       }
     }

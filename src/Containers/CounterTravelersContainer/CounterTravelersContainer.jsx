@@ -5,26 +5,6 @@ import { connect } from 'react-redux';
 import * as dataActions from '../../actions/dataActions';
 
 const CounterTravelersContainer = ({ travelersCount, changeTraveler }) => {
-  const required = value => value ? undefined : 'Required';
-
-  const travelerTemplate = (<div>
-    <Field
-      name="travelerName" type="text"
-      component={RenderField} label="Имя"
-      validate={[required]}
-    />
-    <Field
-      name="travelerLastname" type="text"
-      component={RenderField} label="Фамилия"
-      validate={[required]}
-    />
-    <Field
-      name="travelerPatronimic" type="text"
-      component={RenderField} label="Отчество "
-      validate={[required]}
-    />
-  </div>
-  );
 
   return (
     <Counter

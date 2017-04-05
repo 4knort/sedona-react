@@ -1,23 +1,22 @@
-import React, { propTypes, Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { RenderField, RenderRadio, FormTitle, Counter } from 'components';
-import { CounterDaysContainer, CounterTravelersContainer } from 'containers';
+import { RenderField, FormTitle } from 'components';
+import { CounterDaysContainer } from 'containers';
 import moment from 'moment';
 import * as dataActions from '../../../actions/dataActions';
 
-
 import './form.scss';
 
-
 class Form extends Component {
+
   static propTypes = {
-    handleSubmit: React.PropTypes.func.isRequired,
-    pristine: React.PropTypes.bool.isRequired,
-    reset: React.PropTypes.func.isRequired,
-    submitting: React.PropTypes.bool.isRequired,
-    days: React.PropTypes.number.isRequired,
-    sendData: React.PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    pristine: PropTypes.bool.isRequired,
+    reset: PropTypes.func.isRequired,
+    submitting: PropTypes.bool.isRequired,
+    days: PropTypes.number.isRequired,
+    sendData: PropTypes.func.isRequired,
   }
 
   render() {
@@ -37,18 +36,27 @@ class Form extends Component {
       <form onSubmit={handleSubmit(sendData)} action="" className="form">
         <FormTitle />
         <Field
-          name="name" type="text"
-          component={RenderField} id="name" label="Имя"
+          name="name"
+          type="text"
+          component={RenderField}
+          id="name"
+          label="Имя"
           validate={[required]}
         />
         <Field
-          name="lastname" type="text"
-          component={RenderField} id="lastname" label="Фамилия"
+          name="lastname"
+          type="text"
+          component={RenderField}
+          id="lastname"
+          label="Фамилия"
           validate={[required]}
         />
         <Field
-          name="patronimic" type="text"
-          component={RenderField} id="patronimic" label="Отчество "
+          name="patronimic"
+          type="text"
+          component={RenderField}
+          id="patronimic"
+          label="Отчество "
           validate={[required]}
         />
         <FormTitle block="radio" />
@@ -64,18 +72,18 @@ class Form extends Component {
         </ul>
         <FormTitle block="date" />
         <Field
-          name="date" type="text"
+          name="date"
+          type="text"
           component={RenderField} id="date" label="Дата приезда" placeholder={formatedTodayDate}
           validate={[required, dateFormat]}
         />
         <CounterDaysContainer />
         <Field
-          name="date" type="text"
+          name="date"
+          type="text"
           component={RenderField} id="dateEnd" label="Дата отъезда" disabled placeholder={formatedEndDate}
           validate={[required, dateFormat]}
         />
-        <FormTitle block="travelers" />
-        <CounterTravelersContainer />
         <FormTitle block="visited" />
         <ul className="checkbox-list">
           <li className="checkbox-list__item">
@@ -95,7 +103,7 @@ class Form extends Component {
             <label className="label-checkbox" htmlFor="rock">Красные скалы</label>
           </li>
         </ul>
-        <div>
+        <div className="submit-btns-wrap">
           <button className="submit-btn" type="submit" disabled={pristine || submitting}>Submit</button>
           <button className="submit-btn" type="button" disabled={pristine || submitting} onClick={reset}>Clear Values</button>
         </div>
@@ -104,8 +112,10 @@ class Form extends Component {
   }
 }
 
+Form = reduxForm({
+  form: 'FormContest',
+})(Form);
 
 export default connect(state => ({
   days: state.data.days,
 }), dataActions)(Form);
-

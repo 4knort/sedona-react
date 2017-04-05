@@ -46,10 +46,8 @@ export function changeTraveler(direction, template) {
   };
 }
 
-export function sendData() {
-  const request = axios.post('https://echo.htmlacademy.ru/adaptive?').then(response => {
-    console.log(response);
-  });
+export function sendData(data) {
+  const request = axios.post('https://echo.htmlacademy.ru/adaptive?',data);
 
   return {
     type: types.SEND_DATA,
